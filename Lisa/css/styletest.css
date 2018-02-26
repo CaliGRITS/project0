@@ -1,0 +1,122 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Merriweather", sans-serif;
+  font-weight:600;
+  line-height:1.8em;
+ /* color:#000;*/
+}
+
+.pimg1, .pimg2, .pimg3{
+  position:relative;
+  opacity:0.90;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('../img/image1.jpg');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('../img/image2.jpg');
+  min-height:400px;
+}
+
+.pimg3{
+  background-image:url('../img/image3.jpg');
+  min-height:600px;
+}
+
+.section{
+  text-align:center;
+/*  align-content: center;*/
+  padding:10px 50px;
+}
+
+
+.section-light{
+  background-color:#777;
+/*  color:#222;*/
+
+}
+
+.section-dark{
+  background-color:#444;
+/*  color:#777;*/
+}
+
+.ptext{
+  position:absolute;
+  top:18%;
+  width:100%;
+  text-align:left;
+  color:#fff;
+  font-size:24px;
+  letter-spacing:2px;
+  /*text-transform:uppercase;*/
+}
+
+.ptext .border{
+ /* background-color:#777;*/
+  color:#fff;
+  padding:5px;
+
+}
+
+.ptext .border.trans{
+/*  background-color: none;*/
+/*  color: #000;*/
+
+}
+
+footer {
+/*  display: inline-block;*/
+  background-color: #777;
+  color: #fff;
+  text-align: center;
+}
+footer .container {
+  padding-bottom: 0;
+/*  text-align: center;*/
+  margin: 0;
+}
+footer h1 {
+  margin-bottom: 1em;
+
+}
+/*#name #email .form1 {
+  display: inline-grid;
+  width: 250px;
+  margin: 0 40px;
+}*/
+/*#myform a:hover {
+  background-color: #777;
+}*/
+
+}
+footer p {
+  margin: 2px auto 0 auto;
+  display: inline-grid;
+/*  max-width: 600px;*/
+}
+footer a {
+  color: #000;
+  font-size: 1.4em;
+}
+
+@media(max-width:500px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+
+  }
+}

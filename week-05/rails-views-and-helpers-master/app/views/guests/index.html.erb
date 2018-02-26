@@ -1,0 +1,9 @@
+<!-- Read the docs: http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials -->
+
+<%= render 'form' %>
+<div class=“collection”>
+ <% @guests.each do |guest| %>
+     <li class=“collection-item”><%= guest.message %> | <i><%= guest.name %></i></li>
+ <% end %>
+
+</div>

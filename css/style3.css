@@ -1,0 +1,130 @@
+:root {
+  --primary: #eee;
+  --dark: #444;
+  --light: #fff;
+  --shadow: 0 1px 3px rgba(104, 104, 104, 0.8);
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Mukta Mahee', sans-serif;
+  color: var(--dark);
+}
+
+body {
+  background: #ccc;
+  margin: 10px 20px;
+  line-height: 1.2;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+}
+.main-header {
+  display: grid;
+  grid-template-columns: (4, 1fr);
+}
+
+/*    ~~~~~~~Navigation~~~~*/
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+
+.card-container {
+  perspective: 700px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+p {
+  display: inline-block;
+  text-align: left;
+  color: black;
+  padding-left: 15px;
+  line-height: 20px;
+}
+.card1 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  transition: all 0.8s ease;
+  transform-style: preserve-3d;
+
+}
+.front, .back {
+  background: #5677fc;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 300px;
+  height: 300px;
+  backface-visibility: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 10px 10px 10px rgba(107, 107, 94, 0.56);
+  /*border: solid;*/
+}
+
+.back {
+  transform:rotateY(180deg);
+  background-color: #fff;
+  color: black;
+  border: solid;
+}
+
+
+.card1:hover{
+   transform:rotateY(180deg);
+   
+}
+
+.card2 {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  line-height: 200px;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  transition: all 0.6s ease;
+  transform-style: preserve-3d;
+ 
+}
+
+.card2:hover{
+   transform:rotateY(180deg); 
+}

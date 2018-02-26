@@ -1,0 +1,17 @@
+<%= form_with scope: :guest, url: guests_create_path, local: true do |form| %>
+    <!--Read the docs: http://api.rubyonrails.org/v5.1/classes/ActionView/Helpers/FormHelper.html#method-i-form_with -->
+    <div class="input-field">
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="input-field">
+      <%= form.label :message %><br>
+      <%= form.text_area :message, class: "materialize-textarea" %>
+    </div>
+
+    <div class="input-field">
+      <%= form.submit class: "waves-effect waves-light btn-large" %>
+    </div>
+
+<% end %>

@@ -1,0 +1,694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <title>Sam Johnston | Carousel Demo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!--[if gte mso 9]><xml>
+ 	<o:OfficeDocumentSettings>
+  	<o:AllowPNG/>
+  	<o:PixelsPerInch>96</o:PixelsPerInch>
+ 	</o:OfficeDocumentSettings>
+	</xml><![endif]-->
+
+  <style type="text/css">
+  
+    html {
+      margin: 0px;
+      padding: 0px;
+    }
+	
+    html {
+      box-sizing: border-box;
+    }
+	
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+	
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+	
+    img {
+      display: block;
+      -ms-interpolation-mode: bicubic;
+    }
+	
+    a img {
+      border: none !important;
+    }
+	
+    body {
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+    }
+	
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+	
+    .ExternalClass {
+      width: 100%;
+    }
+	
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+	
+    #outlook a {
+      padding: 0;
+    }
+	
+    table {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+	
+    table td {
+      border-collapse: collapse;
+    }
+	
+    @media only screen and (max-width: 480px),
+    (max-device-width: 480px) {
+		
+      .wrapper {
+        min-width: 0px !important;
+      }
+	  
+      .shrink {
+        width: 320px !important;
+      }
+	  
+      .full-width {
+        width: 100% !important;
+      }
+	  
+      .image-full-width {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+      }
+	  
+      .hide {
+        display: none !important;
+        visibility: none !important;
+        overflow: hidden !important;
+      }
+	  
+    }
+	
+    /* INITIAL SETUP - SET SLIDE SIZE, POSITION AND BUTTON STYLES */
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 1),
+    (min--moz-device-pixel-ratio: 1),
+    (max-width: 480px),
+    (max-device-width: 480px) {
+      #CarouselWrapper {
+        width: 600px !important;
+        height: 1020px !important;
+        position: relative;
+        display: block;
+        overflow: hidden;
+      }
+	  
+      .CarouselMain {
+        width: 600px !important;
+        height: 1020px !important;
+      }
+	  
+      input {
+        display: none;
+      }
+	  
+      .button {
+        visibility: visible !important;
+        max-height: 60px !important;
+        width: 80px;
+        display: block !important;
+        position: absolute !important;
+        text-align: center;
+        z-index: 7;
+        padding: 20px 10px 20px 10px;
+        background-color: rgba(0, 0, 0, 1.6);
+        border: 2px solid #000000;
+        box-sizing: content-box;
+        color: #ffffff !important;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        line-height: 17px;
+        font-weight: bold;
+        -webkit-transition: 0.1s ease-in;
+        -moz-transition: 0.1s ease-in;
+        -ms-transition: 0.1s ease-in;
+        -o-transition: 0.1s ease-in;
+      }
+	  
+      .swoosh {
+        position: relative;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+      }
+	  
+      .slide1-content,
+      .slide2-content,
+      .slide3-content,
+      .slide4-content,
+      .slide5-content,
+      .slide6-content,
+      .slide7-content {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 600px;
+        height: 520px;
+        background-color: #FFFFFF;
+      }
+	  
+    }
+	
+    /* DESKTOP SETUP */
+    
+    @media only screen and (-webkit-min-device-pixel-ratio: 1),
+    (min--moz-device-pixel-ratio: 1) {
+      /* SET POSITION OF BUTTON */
+      
+      .slide1 {
+        top: 20px;
+        left: 20px;
+      }
+	  
+      /* ABSOLUTE POSITION OF SLIDE */
+      
+      .slide1-content {
+        left: 0px;
+      }
+	  
+      /* HOVER OVER STATES - INCLUDING WEB VERSION (JAVASCRIPT) */
+      
+      .slide1:hover {
+        background-color: rgba(199, 20, 68, 1.6);
+      }
+      .slide1.hover {
+        background-color: rgba(199, 20, 68, 1.6);
+      }
+      #slide-1:checked ~ .slide1 {
+        background-color: rgba(199, 20, 68, 1.6);
+      }
+	  
+      /* SET DISTANCE TO TRAVEL BETWEEN SLIDES - INCREASES BY 600 PER SLIDE */
+      
+      #slide-1:checked + table .swoosh { left: 0px !important; }
+	  
+      .slide2 { top: 90px; left: 20px; }
+      .slide2-content { left: 600px; }
+      .slide2:hover { background-color: rgba(199, 20, 68, 1.6); }
+      .slide2.hover { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-2:checked ~ .slide2 { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-2:checked + table .swoosh { left: -600px !important; }
+	  
+      .slide3 { top: 160px; left: 20px; }
+      .slide3-content { left: 1200px; }
+      .slide3:hover { background-color: rgba(199, 20, 68, 1.6); }
+      .slide3.hover { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-3:checked ~ .slide3 { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-3:checked + table .swoosh { left: -1200px !important; }
+	  
+      .slide4 { top: 230px; left: 20px; }
+      .slide4-content { left: 1800px; }
+      .slide4:hover { background-color: rgba(199, 20, 68, 1.6); }
+      .slide4.hover { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-4:checked ~ label { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-4:checked + table .swoosh { left: -1800px !important; }
+	  
+      .slide5 { top: 300px; left: 20px; }
+      .slide5-content { left: 2400px; }
+      .slide5:hover { background-color: rgba(199, 20, 68, 1.6); }
+      .slide5.hover { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-5:checked ~ label { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-5:checked + table .swoosh { left: -2400px !important; }
+	  
+      .slide6 { top: 370px; left: 20px; }
+      .slide6-content { left: 3000px; }
+      .slide6:hover { background-color: rgba(199, 20, 68, 1.6); }
+      .slide6.hover { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-6:checked ~ label { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-6:checked + table .swoosh { left: -3000px !important; }
+	  
+      .slide7 { top: 440px; left: 20px; }
+      .slide7-content { left: 3600px; }
+      .slide7:hover { background-color: rgba(199, 20, 68, 1.6); }
+      .slide7.hover { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-7:checked ~ label { background-color: rgba(199, 20, 68, 1.6); }
+      #slide-7:checked + table .swoosh { left: -3600px !important; }
+	  
+    }
+	
+    /* MOBILE SETUP */
+    
+    @media only screen and (max-width: 480px),
+    (max-device-width: 480px) {
+		
+      #CarouselWrapper {
+        width: 320px !important;
+        height: 1000px !important;
+      }
+	  
+      #CarouselWrapper .CarouselMain {
+        width: 320px !important;
+        height: 3380px !important;
+        -webkit-transition: left 320ms ease-out;
+        -moz-transition: left 320ms ease-out;
+        -ms-transition: left 320ms ease-out;
+        -o-transition: left 320ms ease-out;
+      }
+	  
+      .mobile-image-height {
+        height: 520px;
+      }
+	  
+      .slide1-content,
+      .slide2-content,
+      .slide3-content,
+      .slide4-content,
+      .slide5-content,
+      .slide6-content,
+      .slide7-content {
+        top: 0px;
+        width: 320px !important;
+        height: 1000px !important;
+        background-repeat: no-repeat;
+      }
+	  
+      .button {
+        max-height: 20px !important;
+        width: 20px !important;
+        padding: 6px 6px 6px 6px !important;
+      }
+	  
+      /* SET POSITION OF BUTTON */
+      
+      .slide1 {
+        top: 480px;
+        left: 10px;
+      }
+	  
+      /* SET MOBILE SLICE IMAGE */
+      
+      .slide1-content {
+        left: 0px;
+        background-image: url(http://placehold.it/320x520/13073A/FFFFFF?text=Mobile+Slice);
+      }
+	  
+      /* SET DISTANCE TO TRAVEL BETWEEN SLIDES - INCREASES BY 320 PER SLIDE */
+      
+      #slide-1:checked + table .swoosh {
+        left: 0px !important;
+      }
+	  
+      /* SET BUTTON CONTENT */
+      
+      .slide1:before {
+        content: "1";
+      }
+	  
+      .slide2 { top: 480px; left: 54px; }
+      .slide2-content { left: 320px; background-image: url(http://placehold.it/320x520/887CAF/FFFFFF?text=Mobile+Slice); }
+      #slide-2:checked + table .swoosh { left: -320px !important; }
+      .slide2:before { content: "2"; }
+	  
+      .slide3 { top: 480px; left: 98px; }
+      .slide3-content { left: 640px; background-image: url(http://placehold.it/320x520/403075/FFFFFF?text=Mobile+Slice); }
+      #slide-3:checked + table .swoosh { left: -640px !important; }
+      .slide3:before { content: "3"; }
+	  
+      .slide4 { top: 480px; left: 142px; }
+      .slide4-content { left: 960px; background-image: url(http://placehold.it/320x520/13073A/FFFFFF?text=Mobile+Slice); }
+      #slide-4:checked + table .swoosh { left: -960px !important; }
+      .slide4:before { content: "4"; }
+	  
+      .slide5 { top: 480px; left: 186px; }
+      .slide5-content { left: 1280px; background-image: url(http://placehold.it/320x520/887CAF/FFFFFF?text=Mobile+Slice); }
+      #slide-5:checked + table .swoosh { left: -1280px !important; }
+      .slide5:before { content: "5"; }
+	  
+      .slide6 { top: 480px; left: 230px; }
+      .slide6-content { left: 1600px; background-image: url(http://placehold.it/320x520/403075/FFFFFF?text=Mobile+Slice); }
+      #slide-6:checked + table .swoosh { left: -1600px !important; }
+      .slide6:before { content: "6"; }
+	  
+      .slide7 { top: 480px; left: 274px; }
+      .slide7-content { left: 1920px; background-image: url(http://placehold.it/320x520/13073A/FFFFFF?text=Mobile+Slice); }
+      #slide-7:checked + table .swoosh { left: -1920px !important; }
+      .slide7:before { content: "7"; }
+	  
+    }
+
+  </style>
+</head>
+
+<body style="background-color:#EEEEEE;" bgcolor="#EEEEEE">
+  <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  </div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEEEEE" style="width: 100% !important; table-layout:fixed;">
+    <tr>
+      <td valign="top" align="center">
+        <div class="wrapper" style="min-width: 640px;">
+          <table width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="shrink" style="width:600px; margin:0 auto;">
+            <tr>
+              <td align="center" valign="top" class="shrink" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 20px 20px;">Having trouble viewing this email? Try the <a href="#" style="text-decoration:underline; color:#30455C;">web version</a>.</td>
+            </tr>
+            <tr>
+              <td class="hide" align="center" height="20">&nbsp;</td>
+            </tr>
+          </table>
+          <table id="CarouselWrapper" width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="shrink" style="width:600px; margin:0 auto;">
+            <tr>
+              <td>
+                <table class="CarouselMain" width="600" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                  <tr>
+                    <td valign="top" style="line-height:1px;">
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td style="line-height:1px; font-size:0px;">
+                            <!--[if mso]><p style="display: none;"><![endif]-->
+                            <input type="radio" name="action" checked="checked" id="slide-1" style="display: none!important; max-height: 0; visibility: hidden;" />
+                            <!--[if mso]></p><![endif]-->
+                            <table border="0" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="line-height:1px; font-size:0px;">
+                                  <!--[if mso]><p style="display: none;"><![endif]-->
+                                  <input type="radio" name="action" id="slide-2" style="display: none!important; max-height: 0; visibility: hidden;" />
+                                  <!--[if mso]></p><![endif]-->
+                                  <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                      <td style="line-height:1px; font-size:0px;">
+                                        <!--[if mso]><p style="display: none;"><![endif]-->
+                                        <input type="radio" name="action" id="slide-3" style="display: none!important; max-height: 0; visibility: hidden;" />
+                                        <!--[if mso]></p><![endif]-->
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                          <tr>
+                                            <td style="line-height:1px; font-size:0px;">
+                                              <!--[if mso]><p style="display: none;"><![endif]-->
+                                              <input type="radio" name="action" id="slide-4" style="display: none!important; max-height: 0; visibility: hidden;" />
+                                              <!--[if mso]></p><![endif]-->
+                                              <table border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                  <td style="line-height:1px; font-size:0px;">
+                                                    <!--[if mso]><p style="display: none;"><![endif]-->
+                                                    <input type="radio" name="action" id="slide-5" style="display: none!important; max-height: 0; visibility: hidden;" />
+                                                    <!--[if mso]></p><![endif]-->
+                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                      <tr>
+                                                        <td style="line-height:1px; font-size:0px;">
+                                                          <!--[if mso]><p style="display: none;"><![endif]-->
+                                                          <input type="radio" name="action" id="slide-6" style="display: none!important; max-height: 0; visibility: hidden;" />
+                                                          <!--[if mso]></p><![endif]-->
+                                                          <table border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                              <td style="line-height:1px; font-size:0px;">
+                                                                <!--[if mso]><p style="display: none;"><![endif]-->
+                                                                <input type="radio" name="action" id="slide-7" style="display: none!important; max-height: 0; visibility: hidden;" />
+                                                                <!--[if mso]></p><![endif]-->
+                                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                                  <tr>
+                                                                    <td>
+                                                                      <table class="swoosh" border="0" cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                          <td class="slide1-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/13073A/FFFFFF?text=Slide+One"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td height="10" style="line-height:1px;font-size:1px;display:block;">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td class="slide2-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/887CAF/FFFFFF?text=Slide+Two"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td height="10" style="line-height:1px;font-size:1px;display:block;">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td class="slide3-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/403075/FFFFFF?text=Slide+Three"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td height="10" style="line-height:1px;font-size:1px;display:block;">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td class="slide4-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/13073A/FFFFFF?text=Slide+Four"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td height="10" style="line-height:1px;font-size:1px;display:block;">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td class="slide5-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/887CAF/FFFFFF?text=Slide+Five"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td height="10" style="line-height:1px;font-size:1px;display:block;">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td class="slide6-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/403075/FFFFFF?text=Slide+Six"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td height="10" style="line-height:1px;font-size:1px;display:block;">&nbsp;</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td class="slide7-content">
+                                                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                                              <tr>
+                                                                                <td valign="top" height="520" class="mobile-image-height"><img class="hide" src="http://placehold.it/600x520/13073A/FFFFFF?text=Slide+Seven"
+                                                                                  width="600" alt="" style="display:block;" />
+                                                                                </td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td align="left" valign="top" style="font-family:Verdana, Geneva, sans-serif; font-size: 14px; line-height: 24px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:20px 20px 10px 20px;"><b>Content Here</b>
+                                                                                  <br />
+                                                                                  <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem
+                                                                                  elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis vehicula eu
+                                                                                  vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum
+                                                                                  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec
+                                                                                  luctus cursus finibus. Vestibulum et ornare eros. Etiam maximus tincidunt consectetur.
+                                                                                </td>
+                                                                              </tr>
+                                                                            </table>
+                                                                          </td>
+                                                                        </tr>
+                                                                      </table>
+                                                                    </td>
+                                                                  </tr>
+                                                                </table>
+                                                              </td>
+                                                            </tr>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <label class="button slide1" for="slide-1" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">ONE</span>
+                            </label>
+                            <label class="button slide2" for="slide-2" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">TWO</span>
+                            </label>
+                            <label class="button slide3" for="slide-3" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">THREE</span>
+                            </label>
+                            <label class="button slide4" for="slide-4" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">FOUR</span>
+                            </label>
+                            <label class="button slide5" for="slide-5" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">FIVE</span>
+                            </label>
+                            <label class="button slide6" for="slide-6" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">SIX</span>
+                            </label>
+                            <label class="button slide7" for="slide-7" style="display: none; max-height: 0; visibility: hidden;"><span class="hide">SEVEN</span>
+                            </label>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEEEEE" class="shrink" style="width:600px; margin:0 auto;">
+            <tr>
+              <td align="left" style="font-family:Verdana, Geneva, sans-serif; font-size: 12px; line-height: 19px; color:#30455C; font-weight: 300; letter-spacing: 1px; padding:40px 20px 40px 20px;"><b>Terms and Conditions</b>
+                <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lorem elit, quis luctus orci pellentesque non. Nunc at ex ut sem venenatis
+                vehicula eu vel urna. Duis vitae arcu pulvinar, consectetur nibh sit amet, sodales odio. Vestibulum ante ipsum primis in faucibus orci luctus et
+                ultrices posuere cubilia Curae; Donec luctus cursus finibus.
+                <br />
+                <br /> Vestibulum et ornare eros. Etiam maximus tincidunt consectetur. Etiam et pharetra ex. Curabitur eget nisl nec nunc ultrices hendrerit. Aenean ornare
+                consequat urna, eget rutrum ipsum. Aliquam non neque sed diam euismod consectetur.
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+    var buttons = document.querySelectorAll(
+      '.button');
+    var switchButtons = function() {
+      for (var i = 0; i < buttons.length; i++) {
+        if (buttons[i] == this) {
+          if (buttons[i].className.indexOf(
+              'hover') == -1) {
+            buttons[i].className =
+              buttons[i].className +
+              ' hover';
+          }
+        }
+        else {
+          buttons[i].className =
+            buttons[i].className.replace(
+              'hover', '');
+        }
+      }
+    }
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener(
+        'click', switchButtons, true);
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+/*Snippets:*/
+				/*Overlay*/
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: rgba(250,98,95,0.7);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.image-grid:hover .overlay {
+    width: 100%;
+    left: 0;
+}
+.image-grid:nth-child(-n+7) {
+    margin-bottom: 18px;
+}
+.overlay .text {
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+				/*BacktoTop*/
+#back-to-top {
+    background-color: #fa625f;
+    bottom: 50px;
+    color: #fff;
+    cursor: pointer;
+    height: 38px;
+    line-height: 38px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    width: 35px;
+}
+#back-to-top:hover {
+    color: #fff;
+    background-color: #000;
+}
+#back-to-top i {
+    font-size: 35px;
+    vertical-align: sub;
+}
